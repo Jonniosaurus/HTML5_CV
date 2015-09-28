@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Jonathan Edwards, Curriculum Vitae</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bin/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.0/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.0/angular-sanitize.js"></script>
+  <script src="bin/index.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+  var app = angular.module('myApp',['ngSanitize']);
+  app.filter('newLines', function() {
+    return function(text) {
+      return text.replace(/\n/gi, "<br />");
+    }
+  });
+  app.controller('CVCtrl', function($scope) {
+    $scope.details = CV.Details;
+    $scope.knowledge = CV.Knowledge;
+    $scope.experience = CV.Experience;
+    $scope.employment = CV.Employment;
+    $scope.education = CV.Education;
+  });
+</script>
+  <div id="container" ng-app="myApp" ng-controller="CVCtrl">
+    <div class="page-header">
+      <small class="details">
+        <div class="line"><span class="glyphicon glyphicon-pencil"></span>{{details.Address}}</div>
+        <div class="line"><span class="glyphicon glyphicon-globe"></span>{{details.Email}}</div>
+        <div class="line"><span class="glyphicon glyphicon-phone-alt"></span>{{details.Mob}}</div>
+      </small>      
+      <div class="CV-header"><h1>Curriculum Vitae: <small class="mainTitle">Jonathan Edwards BA MA PGDip</small></h1></div>            
+    </div>  
+    <div id="content">
+    <h4 class="subjHead"><span class="glyphicon glyphicon-user"></span><strong>About</strong></h4>
+    <div class="subjCell panel panel-default"> 
+      <ul>
+      <li>I am a professional and self-motivated software developer.</li>
+      <li>I have experience of staff supervision and training.</li>
+      <li>I am a licensed UK Driver and own a car</li>
+      </ul>       
+    </div>
+    <h4 class="subjHead"><span class="glyphicon glyphicon-book"></span><strong>Knowledge</strong></h4>
+    <div class="subjCell panel panel-default"> 
+      <div class="col-xs-3" ng-repeat="k in knowledge">
+        <h4><small><strong>{{ k.Type }}</strong></small></h4>
+        <div ng-repeat="l in k.List">{{ l }}</div>
+      </div>
+    </div>
+    
+    <h4 class="subjHead"><span class="glyphicon glyphicon-list-alt"></span><strong>Experience</strong></h4>
+    <div class="subjCell panel panel-default">
+      <table class="table table-bordered-horizontal">
+        <tbody>
+          <tr ng-repeat="e in experience">
+            <td>
+              <h4><small><strong>{{ e.Name }}</strong></small></h4>         
+              <div ng-bind-html="e.Details | newLines"></div>      
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="subjHead"><span class="glyphicon glyphicon-briefcase"></span><strong>Employment</strong></h4>
+    <div class="subjCell panel panel-default">
+      <table class="table table-bordered-horizontal">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Job Title</th>
+            <th>From/to</th>
+            <th>Details</th>
+          </tr>
+        <thead>
+        <tbody>
+          <tr ng-repeat="e in employment">
+            <td>{{e.Employer}}</td>
+            <td style="white-space: pre;">{{e.Title}}</td>
+            <td>{{e.Date}}</td>
+            <td ng-bind-html="e.Details | newLines"></td>
+          </tr>              
+        <tbody>
+      </table>
+    </div>
+    <h4 class="subjHead"><span class="glyphicon glyphicon-bookmark"></span><strong>Education</strong></h4>
+    <div class="subjCell panel panel-default">
+      <table class="table table-bordered-horizontal">
+        <thead>
+          <tr>
+            <th>Place of Study</th>
+            <th>Course Title</th>
+            <th>From/to</th>
+            <th>Grade</th>
+          </tr>
+        <thead>
+        <tbody>
+          <tr ng-repeat="e in education">
+            <td>{{e.School}}</td>
+            <td>{{e.Title}}</td>
+            <td>{{e.Date}}</td>
+            <td ng-bind-html="e.Grade | newLines"></td>
+          </tr>              
+        <tbody>
+      </table>
+    </div>
+    References available on request.
+  </div>
+  </div>
+</body>
+</html>

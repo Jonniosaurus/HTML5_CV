@@ -1,0 +1,63 @@
+body {
+  position:relative;
+  top:-40px;
+}
+#content {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+th {
+  color: grey;
+}
+ul {
+position: relative;
+left: -20px;}
+.subjHead, .subjCell{
+  position: relative;
+  float:left;
+  width:100%;
+}
+.page-header {
+  position:relative;
+  top:0px;
+  width: 100%;
+  min-width: 450px;
+  background: -webkit-linear-gradient(right, rgba(255,0,0,0), snow, rgba(10,10,10,0.15)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(left, rgba(255,0,0,0), snow, rgba(10,10,10,0.15)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(left, rgba(255,0,0,0), snow, rgba(10,10,10,0.15)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to left, rgba(255,0,0,0), snow, rgba(10,10,10,0.15)); /* Standard syntax */
+  padding: 5px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid gainsboro;
+}
+.CV-header {
+  position:relative;  
+  display:block;
+}
+.panel-default {
+  border-left: none;
+  border-right: none;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+}
+.col-xs-3 {
+  padding-bottom: 10px;
+}
+.details {
+  position:relative;
+  float:right;  
+  margin-top:25px;
+}
+.mainTitle {
+  position:relative;
+  display:inline;  
+  white-space: nowrap;
+}
+.line {
+  position:relative;
+  white-space: pre;
+}
+.glyphicon {
+  padding-right: 10px;
+}

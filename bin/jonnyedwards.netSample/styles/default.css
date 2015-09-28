@@ -1,0 +1,66 @@
+body {
+font-family: Calibri, Tahoma, Arial,  MS Serif, calibri, arial;
+}
+a.disabled {
+    pointer-events: none;
+}
+#dynamicWrapper{
+  position: relative;
+  height:0px;
+}
+#headerBox {
+  position: absolute;
+  height: 10%;
+}
+.headBox{
+  position:absolute;
+
+  right:12%;
+}
+.homeLink {
+  text-decoration: none;
+}
+#curlyCue{
+  display:none;
+}
+#menuWrapper {
+position:relative;
+float:left;
+margin-top:10px;
+
+padding-top:0.3%;
+padding-bottom:0.3%;
+}
+#menu {
+position: relative;
+z-index:1;
+height: 38px;
+
+}
+.menuDivider{
+	position:relative;
+	top:8px;	
+}
+#webBack {
+  margin-top: -5%;
+  z-index: -10;
+}
+.CapsheadLetter {  padding-top: 6%; } 
+#J { width:13%; }
+#E { width:13.5%;}
+#W { width:13.5%; }
+#A { width: 12%; }
+#N1, #N2, #Y   { width:11%; }
+#O, #D1{ width:10.5%; }
+#R, #S{ width: 10% }
+#D2 { width: 9%; }
+#mainWrapper{
+clear:both;
+position:absolute;
+width:99%;
+right: 1%;
+}
+#body, #footer{
+position:relative;
+margin-top:10px;
+}
